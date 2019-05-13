@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin="">
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            @*<div class="navbar-header">
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>*@
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-content-end">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" id="Cars" onclick="getAtribute('Cars')">Cars <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" id="Truck" onclick="getAtribute('Truck')">Truck <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" id="Motorcycle" onclick="getAtribute('Motorcycle')">Motorcycle <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div  class="alert alert-danger alert-dismissible d-none" id="eroor">
+        <strong>Eroor!</strong> You must fill all property.
+    </div>
+    <div class="alert alert-success alert-dismissible d-none" id="success">
+        <strong>Success!</strong> You add ne Vehicle
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

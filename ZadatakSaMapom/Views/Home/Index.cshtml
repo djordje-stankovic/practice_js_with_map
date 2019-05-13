@@ -1,0 +1,75 @@
+﻿@section Scripts {
+
+    @Scripts.Render("~/Scripts/WorkingWithData.js")
+    @Scripts.Render("~/Scripts/WorkingWithMap.js")
+}
+@*<div class="sidenav">
+    <a id="Cars"  onclick="getAtribute('Cars')">Cars</a>
+    <a id="Truck" onclick="getAtribute('Truck')">Truck</a>
+    <a id="Motorcycle" onclick="getAtribute('Motorcycle')">Motorcycle</a>
+
+</div>*@
+
+<div class="row">
+
+    <div class="col-md-4 p-3">
+        <div class="row justify-content-center">
+            <form id="addForm" onsubmit="addNew()"></form>
+        </div>
+
+
+    </div>
+    <div class="col-md-4">
+        <div class="row justify-content-md-center" id="mapid">
+
+        </div>
+
+    </div>
+
+    <div class="col-md-7">
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="atributs">Atribut</label>
+                <select id="atributs" class="form-control" onchange="getPosibleSearch()">
+                    <option>Search For?</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="posibleSearch">Search for</label>
+                <select id="posibleSearch" class="form-control">
+                    <option>Search For?</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="valueOfFilter">Value</label>
+                <input class="form-control" id="valueOfFilter">
+            </div>
+            <div class="form-group">
+                <button class="btn-primary btn-sm align-content-center" onclick="filterFunction()">Search</button>
+                <button class="btn-primary" onclick="filterClear()">Clear</button>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <div class="col-md-8">
+        <div class="row">
+
+            <table id="table" class="table"></table>
+
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
